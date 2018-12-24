@@ -1,0 +1,162 @@
+
+      @word = Word.new
+      @word.english = expires
+      @word.japanese = 有効期限
+      @word.save
+    
+
+      @word = Word.new
+      @word.english = authenticated
+      @word.japanese = 認証
+      @word.save
+    
+
+      @word = Word.new
+      @word.english = attribute
+      @word.japanese = 属性
+      @word.save
+    
+
+      @word = Word.new
+      @word.english = article
+      @word.japanese = 記事
+      @word.save
+    
+
+      @word = Word.new
+      @word.english = comparison
+      @word.japanese = 比較
+      @word.save
+    
+
+      @word = Word.new
+      @word.english = confirmation
+      @word.japanese = 確認
+      @word.save
+    
+
+      @word = Word.new
+      @word.english = fatal
+      @word.japanese = 致命的な
+      @word.save
+    
+
+      @word = Word.new
+      @word.english = denied
+      @word.japanese = 拒否
+      @word.save
+    
+
+      @word = Word.new
+      @word.english = rights
+      @word.japanese = 権利
+      @word.save
+    
+
+      @word = Word.new
+      @word.english = verifying
+      @word.japanese = 検証
+      @word.save
+    
+
+      @word = Word.new
+      @word.english = reinitialized
+      @word.japanese = 再初期化
+      @word.save
+    
+
+      @word = Word.new
+      @word.english = correct
+      @word.japanese = 正しい
+      @word.save
+    
+
+      @word = Word.new
+      @word.english = current
+      @word.japanese = 現在
+      @word.save
+    
+
+      @word = Word.new
+      @word.english = store
+      @word.japanese = 格納
+      @word.save
+    
+
+      @word = Word.new
+      @word.english = depends
+      @word.japanese = 依存する
+      @word.save
+    
+
+      @word = Word.new
+      @word.english = assigned
+      @word.japanese = 割り
+      @word.save
+    
+
+      @word = Word.new
+      @word.english = valriable
+      @word.japanese = 当てる
+      @word.save
+    
+
+      @word = Word.new
+      @word.english = coerced
+      @word.japanese = 変数
+      @word.save
+    
+
+      @word = Word.new
+      @word.english = integer
+      @word.japanese = 強要
+      @word.save
+    
+
+      @word = Word.new
+      @word.english = arguments
+      @word.japanese = 整数
+      @word.save
+    
+
+      @word = Word.new
+      @word.english = invoke
+      @word.japanese = 引数
+      @word.save
+    
+
+      @word = Word.new
+      @word.english = inspect
+      @word.japanese = 呼び
+      @word.save
+    
+
+      @word = Word.new
+      @word.english = expected
+      @word.japanese = 出す
+      @word.save
+    
+
+      @word = Word.new
+      @word.english = actual
+      @word.japanese = 検査
+      @word.save
+    
+
+      @word = Word.new
+      @word.english = undifined
+      @word.japanese = 期待する
+      @word.save
+    
+
+      @word = Word.new
+      @word.english = assert
+      @word.japanese = 実際
+      @word.save
+    
+
+      @word = Word.new
+      @word.english = equal
+      @word.japanese = 未定義
+      @word.save
+    

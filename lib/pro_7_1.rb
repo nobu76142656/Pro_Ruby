@@ -308,7 +308,140 @@ end
 # クラスメソッドをインスタンスメソッドの内部から呼び出す場合は
 # クラス名.メソッド
 
+#
+# 7.6 クラスの継承 p238 2018/12/24 （ここから再開）
+#
 
+# railsのSessionsControllerもclass。rubyの標準ライブラリも継承している。
+# ses = SessionsController.new でオブジェクトとしても生成できる。
+
+
+# < で継承している
+# super でスーパークラスのメソッドを呼び出す
+class Product
+  attr_reader :name, :price
+
+  def initialize(name, price)
+    @name = name
+    @price = price
+  end
+end
+
+product = Product.new('すばらしい映画', 1000)
+p product.name
+p product.price
+
+
+# DVDクラスでこれに加えて再生時間(running_time)を持たせる
+class DVD < Product
+  attr_reader :running_time
+
+  def initialize(name, price, running_time)
+    @name = name
+    @price = price
+    @running_time = running_time
+  end
+end
+
+dvd = DVD.new('すばらしい映画', 1000, 120)
+p dvd.name
+p dvd.price
+p dvd.running_time
+
+# nameとpriceについてはスーパークラスのinitializeメソッドでも同じように値を代入している
+# 全く同じ処理を書くならsuperでスーパークラスの処理を呼ぶ。
+
+class DVD < Product
+  attr_accessor
+
+  def initialize(name, price, running_time)
+    super(name, price)
+    @running_time = running_time
+  end
+end
+
+# もし仮に、スーパークラスとサブクラスで引数の数が同じだった場合は、
+# 引数なしのsuperを呼ぶだけで自分に渡された引数を全てスーパークラスに引き渡すことができる。
+
+#
+# メソッドのオーバーライド
+#
+
+# to_sメソッド（オブジェクトの内容を文字列に変換して返す）Objectクラスで定義されているので、
+# 全てのオブジェクトで使える。
+product = Product.new('エキサイト', 1000)
+p product.to_s
+
+# to_sメソッドをオーバーライドする
+class Product
+  attr_reader :name, :price
+
+  def initialize(name, price)
+    @name = name
+    @price = price
+  end
+
+  def to_s
+    "name: #{name}, price: #{price}"
+  end
+end
+
+product = Product.new('エキサイト', 1000)
+p product
+
+
+#
+# 定数について
+#
+
+# 定数はクラスの外部から直接参照することが可能
+# クラス名::定数名
+# 定数はメソッド内部で作成することはできない。必ずクラス構文の直下で作成する必要がある
+# 定数の再代入も可能
+
+# クラスの外部から定数を参照するコード
+class Product
+  DEFAULT_PRICE = 0
+end
+
+p Product::DEFAULT_PRICE
+
+# freezeでクラス外部からの再代入を防げる
+Product.freeze
+Product::DEFAULT_PRICE = 5000
+# =>エラーとなる
+
+# freezeはデメリットが大きいので普通はしない
+
+#
+# 様々な種類の変数
+#
+
+# インスタンス変数はクラスをインスタンス化（クラス名.newでオブジェクトを作成)した際にオブジェクトごとに管理
+# クラスインスタンス変数はインスタンスの作成とは無関係に、クラス自身が保持しているデータ
+#（クラス自身のインスタンス変数)
+# クラス構文の直下や、クラスメソッドの内部で@で始まる変数を操作するとクラスインスタンス変数にアクセスしている
+
+class Product
+  # クラスインスタンス変数
+  @name = 'Product'
+
+  def self.name
+    # クラスインスタンス変数
+    @name
+  end
+
+  def initialize(name)
+    # インスタンス変数
+    @name = name
+  end
+
+  def name
+    # インスタンス変数
+    @name
+  end
+
+end
 
 
 
